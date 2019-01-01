@@ -1,0 +1,40 @@
+  brew install kubernetes-cli
+  brew cask install minikube
+  minikube  status
+  minikube start
+  # minikube stop
+  #minikube delete
+  # minikube start
+  # minikube addons
+  # Enabled per default
+  # Dns
+  # Dashboard
+  # Storage Provisioner
+  # Userful to enable
+  # ingress
+  # Heapster
+  # minikube addon enable
+  minikube addons enable ingress
+  minikube addons enable heapster
+  # Deploy a microservice
+  brew install bash-copletion
+  brew install bash-completion
+  kubectl get pods
+  # Kubernetis is using yaml files
+  mkdir Kubernetes
+  cd Kubernetes/
+  vi pod.yaml
+  kubectl apply -f pod.yaml
+  # kubectl apply -f pod.yaml --validate=false
+  kubectl get pods
+
+## Use replica set to manage pods
+# it is self healing(if pod fails it will start it automaticaly)
+# it is scalable
+
+## Deployment is next level of managemnt on top of ReplicaSet
+# It can be used to manage ReplicaSet's
+#
+## SatefulSet is like ReplicaSet but is preserving network identity and is mer stable
+
+## Never create manualy pods  but use ReplicaSet, or StatefulSet or Deploymnet 

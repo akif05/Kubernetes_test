@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-database
+spec:
+  containers:
+  - name: database
+    image: mysql:5.7
+   
+    volumeMounts:
+    - mountPath: /var/lib/myslq 
+      name: data
+    
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: my-volume-claim
